@@ -20,5 +20,5 @@ This is an MVP develped by a Junior Javascript Developer in a short weekend. The
 
 ## Mockups
 
-[Mockup1](./README-images/mockup1.jpg)
-[Mockup1](./README-images/mockup2.jpg)
+![Mockup1](./README-images/mockup1.jpg)
+![Mockup1](./README-images/mockup2.jpg)
