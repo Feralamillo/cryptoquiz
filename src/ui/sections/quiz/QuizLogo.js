@@ -21,8 +21,6 @@ class QuizLogo extends Component {
                 ref="cryptocurrency"
                 placeholder="Enter name of Cryptocurrency"
               />
-            </div>
-            <div>
               <button>Send</button>
             </div>
           </form>

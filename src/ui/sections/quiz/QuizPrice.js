@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import './Quiz.css';
+import api from '../../../services/cryptoAPI';
 
 class QuizPrice extends Component {
+  componentDidMount() {
+    api
+      .getSingledata('ETH')
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(console.eror);
+  }
+
   render() {
     return (
       <div className="main">

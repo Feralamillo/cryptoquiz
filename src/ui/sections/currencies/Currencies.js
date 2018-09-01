@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import './Currencies.css';
+import api from '../../../services/cryptoAPI';
 
 class Currencies extends Component {
+  componentDidMount() {
+    api
+      .getAlldata()
+      .then(res => {
+        console.log(res.data.Data);
+      })
+      .catch(console.eror);
+  }
+
   render() {
     return (
       <div className="grid">
