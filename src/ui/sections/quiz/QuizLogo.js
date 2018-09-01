@@ -4,7 +4,7 @@ import './Quiz.css';
 class QuizLogo extends Component {
   render() {
     return (
-      <div className="main">
+      <div className="mainQuiz">
         <div className="container">
           <img
             className="imgquiz"

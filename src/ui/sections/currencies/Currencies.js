@@ -25,9 +25,10 @@ class Currencies extends Component {
             />
             <div className="container">
               <h4>
-                <b>Ethereum</b>
+                <b>Coin Name: Ethereum</b>
               </h4>
-              <p>ETH</p>
+              <p> Symbol: ETH</p>
+              <p>ProofType: PoW</p>
             </div>
           </div>
           <div className="card">
@@ -39,9 +40,10 @@ class Currencies extends Component {
             />
             <div className="container">
               <h4>
-                <b>Bitcoin</b>
+                <b>Coin Name: Bitcoin</b>
               </h4>
-              <p>BTC</p>
+              <p>Symbol: BTC</p>
+              <p>ProofType: PoW</p>
             </div>
           </div>
           <div className="card">
@@ -53,9 +55,10 @@ class Currencies extends Component {
             />
             <div className="container">
               <h4>
-                <b>Litecoin</b>
+                <b>Coin Name: Litecoin</b>
               </h4>
-              <p>LTC</p>
+              <p>Symbol: LTC</p>
+              <p>ProofType: PoW</p>
             </div>
           </div>
         </div>
