@@ -8,17 +8,26 @@ class Rollon extends Component {
                 <ul>
                     <li>
                         <a href="">
-                            <img src="https://www.cryptocompare.com/media/20646/eth_logo.png" />
+                            <img
+                                src="https://www.cryptocompare.com/media/20646/eth_logo.png"
+                                alt="ethereum"
+                            />
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="https://www.cryptocompare.com/media/19633/btc.png" />
+                            <img
+                                src="https://www.cryptocompare.com/media/19633/btc.png"
+                                alt="bitcoin"
+                            />
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="https://www.cryptocompare.com/media/19782/litecoin-logo.png" />
+                            <img
+                                src="https://www.cryptocompare.com/media/19782/litecoin-logo.png"
+                                alt="litecoin"
+                            />
                         </a>
                     </li>
                 </ul>

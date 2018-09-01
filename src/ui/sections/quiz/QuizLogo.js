@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import './Quiz.css';
 
-class Quiz extends Component {
+class QuizLogo extends Component {
     render() {
         return (
             <div className="main">
                 <div className="container">
-                    <img src="https://www.cryptocompare.com/media/20646/eth_logo.png" />
+                    <img
+                        src="https://www.cryptocompare.com/media/20646/eth_logo.png"
+                        alt="Ethereum"
+                    />
+
+                    <h3>What's the name of this crypto?</h3>
+
                     <form className="quizform">
                         <div>
                             <input
@@ -25,4 +31,4 @@ class Quiz extends Component {
     }
 }
 
-export default Quiz;
+export default QuizLogo;

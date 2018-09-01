@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+const url = "https://www.cryptocompare.com/api/data/coinlist/";
+
 class Cryptoinfo extends Component {
   state = {
     users: [],
