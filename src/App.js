@@ -6,7 +6,7 @@ import Header from './ui/header/Header';
 import Currencies from './ui/sections/currencies/Currencies';
 import QuizLogo from './ui/sections/quiz/QuizLogo';
 import QuizSymbol from './ui/sections/quiz/QuizSymbol';
-import QuizPrice from './ui/sections/quiz/QuizLogo';
+import QuizPrice from './ui/sections/quiz/QuizPrice';
 import Ranking from './ui/sections/ranking/Ranking';
 import Rollon from './ui/sections/rollon/Rollon';
 import Footer from './ui/footer/Footer';

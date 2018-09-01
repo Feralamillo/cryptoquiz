@@ -7,8 +7,8 @@ class QuizLogo extends Component {
             <div className="main">
                 <div className="container">
                     <img
-                        src="https://www.cryptocompare.com/media/20646/eth_logo.png"
-                        alt="Ethereum"
+                        src="https://www.cryptocompare.com/media/19633/btc.png"
+                        alt="Misterious logo"
                     />
 
                     <h3>What's the name of this crypto?</h3>

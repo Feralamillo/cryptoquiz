@@ -1,19 +1,40 @@
+.grid {
+    margin: 0 100px 0 100px;
+}
+
+.row {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
 .card {
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 5px;
     width: 200px;
+    margin: 5px;
+    margin-top: 10px;
+    text-align: center;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Add some padding inside the card container */
 .container {
-    padding: 2px 16px;
+    padding: 2px;
 }
 
 img {

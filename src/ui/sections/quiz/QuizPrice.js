@@ -14,7 +14,7 @@ class QuizPrice extends Component {
                             <input
                                 type="text"
                                 ref="cryptocurrency"
-                                placeholder="Enter name of Cryptocurrency"
+                                placeholder="Enter aproximate price of Cryptocurrency"
                             />
                         </div>
                         <div>

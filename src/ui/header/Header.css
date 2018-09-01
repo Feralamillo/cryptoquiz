@@ -1,4 +1,15 @@
 .header {
     background: #00f07b;
+    height: 20px;
+    margin: 0;
     padding: 10px;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+}
+
+.navitem {
+    margin: 5px;
+    text-decoration: none;
+    color: #fff;
 }
