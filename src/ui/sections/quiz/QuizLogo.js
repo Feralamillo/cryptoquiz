@@ -2,33 +2,34 @@ import React, { Component } from 'react';
 import './Quiz.css';
 
 class QuizLogo extends Component {
-    render() {
-        return (
-            <div className="main">
-                <div className="container">
-                    <img
-                        src="https://www.cryptocompare.com/media/19633/btc.png"
-                        alt="Misterious logo"
-                    />
+  render() {
+    return (
+      <div className="main">
+        <div className="container">
+          <img
+            className="imgquiz"
+            src="https://www.cryptocompare.com/media/19633/btc.png"
+            alt="Misterious logo"
+          />
 
-                    <h3>What's the name of this crypto?</h3>
+          <h3>What's the name of this crypto?</h3>
 
-                    <form className="quizform">
-                        <div>
-                            <input
-                                type="text"
-                                ref="cryptocurrency"
-                                placeholder="Enter name of Cryptocurrency"
-                            />
-                        </div>
-                        <div>
-                            <button>Send</button>
-                        </div>
-                    </form>
-                </div>
+          <form className="quizform">
+            <div>
+              <input
+                type="text"
+                ref="cryptocurrency"
+                placeholder="Enter name of Cryptocurrency"
+              />
             </div>
-        );
-    }
+            <div>
+              <button>Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default QuizLogo;

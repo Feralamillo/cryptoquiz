@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import axios from 'axios';
+import api from './services/cryptoAPI';
 
 import Header from './ui/header/Header';
 import Currencies from './ui/sections/currencies/Currencies';
@@ -14,37 +14,31 @@ import Footer from './ui/footer/Footer';
 import './App.css';
 
 class App extends Component {
-    state = {
-        users: [],
-        store: [],
-    };
+  componentDidMount() {
+    api
+      .getAlldata()
+      .then(res => {
+        console.log(res.data.Data);
+      })
+      .catch(console.eror);
+  }
 
-    componentDidMount() {
-        axios
-            .get(
-                'https://randomuser.me/api/?results=10&inc=name,registered&nat=fr',
-            )
-            .then(json => console.log(json.data.results[0].name.first));
-    }
-
-    // The API is https://www.cryptocompare.com/api/data/coinlist/
-
-    render() {
-        return (
-            <BrowserRouter>
-                <div>
-                    <Header />
-                    <Route path="/" exact component={Currencies} />
-                    <Route path="/rollon" component={Rollon} />
-                    <Route path="/quizlogo" component={QuizLogo} />
-                    <Route path="/quizsymbol" component={QuizSymbol} />
-                    <Route path="/quizprice" component={QuizPrice} />
-                    <Route path="/ranking" component={Ranking} />
-                    <Footer />
-                </div>
-            </BrowserRouter>
-        );
-    }
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact component={Currencies} />
+          <Route path="/rollon" component={Rollon} />
+          <Route path="/quizlogo" component={QuizLogo} />
+          <Route path="/quizsymbol" component={QuizSymbol} />
+          <Route path="/quizprice" component={QuizPrice} />
+          <Route path="/ranking" component={Ranking} />
+          <Footer />
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

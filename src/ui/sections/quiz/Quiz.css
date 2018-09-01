@@ -1,11 +1,11 @@
 .main {
-    text-align: center;
+  text-align: center;
 }
 
 .container {
-    padding: 100px;
+  padding: 100px;
 }
 
-img {
-    max-height: 150px;
+.imgquiz {
+  max-height: 150px;
 }
