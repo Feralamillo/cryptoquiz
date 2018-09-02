@@ -84,7 +84,7 @@ class QuizFormLogo extends Component {
 /**
  * Parent component that manages the info between the components
  */
-class QuizLogo extends Component {
+class Quiz extends Component {
   static defaultProps = {
     logo: '/media/34478149/prochain.png',
     symbol: 'PTC',
@@ -146,4 +146,4 @@ class QuizLogo extends Component {
   }
 }
 
-export default QuizLogo;
+export default Quiz;

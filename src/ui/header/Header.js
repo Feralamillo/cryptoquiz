@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import './Header.css';
 
 class Header extends Component {
@@ -18,47 +19,11 @@ class Header extends Component {
         <NavLink
           className="navitem"
           exact
-          to="/rollon"
-          activeClassName="active"
-          activeStyle={{ fontWeight: 'bold' }}
-        >
-          Rollon
-        </NavLink>
-        <NavLink
-          className="navitem"
-          exact
           to="/quizlogo"
           activeClassName="active"
           activeStyle={{ fontWeight: 'bold' }}
         >
-          QuizLogo
-        </NavLink>
-        <NavLink
-          className="navitem"
-          exact
-          to="/quizsymbol"
-          activeClassName="active"
-          activeStyle={{ fontWeight: 'bold' }}
-        >
-          QuizSymbol
-        </NavLink>
-        <NavLink
-          className="navitem"
-          exact
-          to="/quizprice"
-          activeClassName="active"
-          activeStyle={{ fontWeight: 'bold' }}
-        >
-          QuizPrice
-        </NavLink>
-        <NavLink
-          className="navitem"
-          exact
-          to="/ranking"
-          activeClassName="active"
-          activeStyle={{ fontWeight: 'bold' }}
-        >
-          Ranking
+          Quiz
         </NavLink>
       </div>
     );

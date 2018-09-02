@@ -3,9 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './ui/header/Header';
 import Currencies from './ui/sections/currencies/Currencies';
-import QuizLogo from './ui/sections/quiz/QuizLogo';
-import QuizSymbol from './ui/sections/quiz/QuizSymbol';
-import QuizPrice from './ui/sections/quiz/QuizPrice';
+import Quiz from './ui/sections/quiz/Quiz';
 import Ranking from './ui/sections/ranking/Ranking';
 import Rollon from './ui/sections/rollon/Rollon';
 import Footer from './ui/footer/Footer';
@@ -20,9 +18,7 @@ class App extends Component {
           <Header />
           <Route path="/" exact component={Currencies} />
           <Route path="/rollon" component={Rollon} />
-          <Route path="/quizlogo" component={QuizLogo} />
-          <Route path="/quizsymbol" component={QuizSymbol} />
-          <Route path="/quizprice" component={QuizPrice} />
+          <Route path="/quizlogo" component={Quiz} />
           <Route path="/ranking" component={Ranking} />
           <Footer />
         </div>
