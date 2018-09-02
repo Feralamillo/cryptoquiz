@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import swal from 'sweetalert2';
 import './Quiz.css';
 
 class QuizLogo extends Component {
@@ -12,9 +13,17 @@ class QuizLogo extends Component {
     if (cryptoName.length > 0) {
       this.refs.cryptoName.value = '';
       if (cryptoName === cryptoRealName) {
-        alert('Congratulations!!');
+        swal({
+          title: 'Congratulations!!',
+          text: 'Your answer is correct',
+          type: 'success',
+        });
       } else {
-        alert("Sorry, you didn't make it this time");
+        swal({
+          title: 'Wrong :(',
+          text: `The answer is ${cryptoRealName}`,
+          type: 'error',
+        });
       }
     }
   };

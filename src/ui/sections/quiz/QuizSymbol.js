@@ -11,18 +11,28 @@ class QuizSymbol extends Component {
     if (cryptoName.length > 0) {
       this.refs.cryptoName.value = '';
       if (cryptoName === cryptoRealName) {
-        swal('Congratulations!!');
+        swal({
+          title: 'Congratulations!!',
+          text: 'Your answer is correct',
+          type: 'success',
+        });
       } else {
-        swal("Sorry, you didn't make it this time");
+        swal({
+          title: 'Wrong :(',
+          text: `The answer is ${cryptoRealName}`,
+          type: 'error',
+        });
       }
     }
   };
 
   render() {
+    const cryptoSymbol = 'BTC';
+
     return (
       <div className="mainQuiz">
         <div className="container">
-          <h2>BTC</h2>
+          <h2>{cryptoSymbol}</h2>
           <h3>What's the name of this crypto?</h3>
 
           <form className="quizform" onSubmit={this.OnFormSubmit}>

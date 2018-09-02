@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import swal from 'sweetalert2';
 import './Quiz.css';
 import api from '../../../services/cryptoAPI';
 
@@ -23,14 +24,26 @@ class QuizPrice extends Component {
     const rangeLow = priceCrypto * 0.95;
     const rangeHigh = priceCrypto * 1.05;
 
-    const priceInput = this.refs.priceInput.value;
+    const priceInput = parseFloat(this.refs.priceInput.value);
+
+    console.log(
+      `Precio Crypto ${priceCrypto}, Rango inferior ${rangeLow}, Rango superior ${rangeHigh}, Precio enviado ${priceInput}`,
+    );
 
     console.log(priceInput);
 
-    if (priceInput >= { rangeLow } && priceInput <= { rangeHigh }) {
-      alert('It Works!!');
+    if (priceInput >= rangeLow && priceInput <= rangeHigh) {
+      swal({
+        title: 'Congratulations!!',
+        text: 'Your answer was correct',
+        type: 'success',
+      });
     } else {
-      alert("Sorry, you didn't achieve it. Try Again");
+      swal({
+        title: 'Wrong :(',
+        text: `The answer is ${priceCrypto}`,
+        type: 'error',
+      });
     }
   };
 
@@ -48,7 +61,7 @@ class QuizPrice extends Component {
           <form className="quizform" onSubmit={this.OnFormSubmit}>
             <div>
               <input
-                type="text"
+                type="number"
                 ref="priceInput"
                 placeholder="Enter aproximate price of Cryptocurrency"
               />
