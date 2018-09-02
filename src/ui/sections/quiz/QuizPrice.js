@@ -4,26 +4,38 @@ import './Quiz.css';
 import api from '../../../services/cryptoAPI';
 
 class QuizPrice extends Component {
-  state = {
+  static defaultProps = {
     priceCrypto: 200,
   };
 
+  state = {
+    priceCrypto: this.props.priceCrypto,
+  };
+
+  /**
+   * Call API to get information about the price
+   */
   componentDidMount() {
     api
       .getSingledata('ETH') // pass the variable of the crypto (random that comes from all the cryptos)
       .then(res => {
-        console.log(res.data.USD);
+        const SingleData = res.data.USD;
         // Modify state getting the price of Crypto
+        this.setState({
+          priceCrypto: SingleData,
+        });
       })
       .catch(console.eror);
   }
 
+  /**
+   * Manages the data once the form has been submitted
+   */
   OnFormSubmit = e => {
     e.preventDefault();
     const priceCrypto = 295;
     const rangeLow = priceCrypto * 0.95;
     const rangeHigh = priceCrypto * 1.05;
-
     const priceInput = parseFloat(this.refs.priceInput.value);
 
     console.log(
@@ -48,6 +60,7 @@ class QuizPrice extends Component {
   };
 
   render() {
+    console.log(this.state.priceCrypto);
     return (
       <div className="mainQuiz">
         <div className="container">
@@ -63,7 +76,7 @@ class QuizPrice extends Component {
               <input
                 type="number"
                 ref="priceInput"
-                placeholder="Enter aproximate price of Cryptocurrency"
+                placeholder="Aproximate price in USD"
               />
             </div>
             <div>

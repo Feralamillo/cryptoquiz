@@ -19,15 +19,6 @@ class Header extends Component {
         <NavLink
           className="navitem"
           exact
-          to="/rollon"
-          activeClassName="active"
-          activeStyle={{ fontWeight: 'bold' }}
-        >
-          Rollon
-        </NavLink>
-        <NavLink
-          className="navitem"
-          exact
           to="/quizlogo"
           activeClassName="active"
           activeStyle={{ fontWeight: 'bold' }}
@@ -51,15 +42,6 @@ class Header extends Component {
           activeStyle={{ fontWeight: 'bold' }}
         >
           QuizPrice
-        </NavLink>
-        <NavLink
-          className="navitem"
-          exact
-          to="/ranking"
-          activeClassName="active"
-          activeStyle={{ fontWeight: 'bold' }}
-        >
-          Ranking
         </NavLink>
       </div>
     );
