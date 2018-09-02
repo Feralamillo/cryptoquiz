@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import swal from 'sweetalert2';
-
 import './Quiz.css';
 import api from '../../../services/cryptoAPI';
 
@@ -27,11 +26,16 @@ class QuizShowLogo extends Component {
  */
 class QuizFormLogo extends Component {
   OnFormSubmit = e => {
-    // not to refresh when clicking
+    // avoids refreshing when clicking
     e.preventDefault();
     const updates = {};
     const cryptoName = this.refs.cryptoName.value;
     const cryptoRealName = this.props.cryptoRealName;
+
+    /**
+     * If the answer is correct, it shows another Coin
+     * BUT if it fails the participant has to write the correct value.
+     */
 
     if (cryptoName.length > 0) {
       this.refs.cryptoName.value = '';
@@ -41,10 +45,13 @@ class QuizFormLogo extends Component {
           text: 'Your answer is correct',
           type: 'success',
         });
+        /**
+         * Update the state with new values from the API
+         * How?? When calling the API method it doens't send the state :(
+         */
         updates.logo = '/media/33842910/bmx.jpg';
         updates.symbol = 'TRY';
-        updates.cryptoRealName = 'Mandarinas';
-        console.log(updates.logo);
+        updates.cryptoRealName = 'ItWillWork';
       } else {
         swal({
           title: 'Wrong :(',
@@ -90,34 +97,33 @@ class QuizLogo extends Component {
     cryptoRealName: this.props.cryptoRealName,
   };
 
-  // componentWillMount() {
-  //   api
-  //     .getAlldata()
-  //     .then(res => {
-  //       const allData = Object.values(res.data.Data);
-  //       const randomIndex = Math.floor(Math.random() * allData.length);
-  //       console.log(randomIndex);
-  //       console.log(allData[randomIndex]);
-  //       const crypto = allData[randomIndex];
-  //       this.setState({
-  //         cryptoRealName: crypto.CoinName,
-  //         logo: crypto.ImageUrl,
-  //       });
-  //       console.log(`The name of the Coin is ${crypto.CoinName}`);
-  //       console.log(`The Symbol of the Coin is ${crypto.Name}`);
-  //       console.log(
-  //         `The Image of the Coin is http://cryptocompare.com${crypto.ImageUrl}`,
-  //       );
-  //       console.log(`The Prooftype of the Coin is ${crypto.ProofType}`);
-  //     })
-  //     .catch(console.eror);
-  // }
+  componentDidMount() {
+    api
+      .getAlldata()
+      .then(res => {
+        const allData = Object.values(res.data.Data);
+        const randomIndex = Math.floor(Math.random() * allData.length);
+        console.log(randomIndex);
+        console.log(allData[randomIndex]);
+        const crypto = allData[randomIndex];
+        this.setState({
+          logo: crypto.ImageUrl,
+          cryptoRealName: crypto.CoinName,
+          symbol: crypto.Name,
+        });
+        console.log(`The name of the Coin is ${crypto.CoinName}`);
+        console.log(`The Symbol of the Coin is ${crypto.Name}`);
+        console.log(
+          `The Image of the Coin is http://cryptocompare.com${crypto.ImageUrl}`,
+        );
+        console.log(`The Prooftype of the Coin is ${crypto.ProofType}`);
+      })
+      .catch(console.eror);
+  }
 
   handleNewData = function(updates) {
     this.setState(updates);
     console.log(updates);
-    console.log(this.state.logo);
-    console.log(this.state.symbol);
   };
 
   render() {
