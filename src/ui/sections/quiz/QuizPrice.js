@@ -1,10 +1,55 @@
 import React, { Component } from 'react';
+import swal from 'sweetalert2';
 import './Quiz.css';
+import api from '../../../services/cryptoAPI';
 
 class QuizPrice extends Component {
+  state = {
+    priceCrypto: 200,
+  };
+
+  componentDidMount() {
+    api
+      .getSingledata('ETH') // pass the variable of the crypto (random that comes from all the cryptos)
+      .then(res => {
+        console.log(res.data.USD);
+        // Modify state getting the price of Crypto
+      })
+      .catch(console.eror);
+  }
+
+  OnFormSubmit = e => {
+    e.preventDefault();
+    const priceCrypto = 295;
+    const rangeLow = priceCrypto * 0.95;
+    const rangeHigh = priceCrypto * 1.05;
+
+    const priceInput = parseFloat(this.refs.priceInput.value);
+
+    console.log(
+      `Precio Crypto ${priceCrypto}, Rango inferior ${rangeLow}, Rango superior ${rangeHigh}, Precio enviado ${priceInput}`,
+    );
+
+    console.log(priceInput);
+
+    if (priceInput >= rangeLow && priceInput <= rangeHigh) {
+      swal({
+        title: 'Congratulations!!',
+        text: 'Your answer was correct',
+        type: 'success',
+      });
+    } else {
+      swal({
+        title: 'Wrong :(',
+        text: `The answer is ${priceCrypto}`,
+        type: 'error',
+      });
+    }
+  };
+
   render() {
     return (
-      <div className="main">
+      <div className="mainQuiz">
         <div className="container">
           <img
             className="imgquiz"
@@ -13,11 +58,11 @@ class QuizPrice extends Component {
           />
           <h2>ETH</h2>
           <h3>What's the aproximate price of this crypto?</h3>
-          <form className="quizform">
+          <form className="quizform" onSubmit={this.OnFormSubmit}>
             <div>
               <input
-                type="text"
-                ref="cryptocurrency"
+                type="number"
+                ref="priceInput"
                 placeholder="Enter aproximate price of Cryptocurrency"
               />
             </div>

@@ -1,12 +1,12 @@
 .header {
   background: #00f07b;
-  height: 50px;
   border: 1px solid #ccc;
+  padding: 10px 0 10px 0;
   margin: 0px auto;
 }
 
 .navitem {
   margin: 5px;
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }

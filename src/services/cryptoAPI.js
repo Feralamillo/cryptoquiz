@@ -1,9 +1,15 @@
 import axios from 'axios';
 
-const url = 'https://min-api.cryptocompare.com/data/all/coinlist';
+const urlAll = 'https://min-api.cryptocompare.com/data/all/coinlist';
+const urlsingle =
+  'https://min-api.cryptocompare.com/data/price?tsyms=USD&fsym=';
 
 const api = {
   getAlldata: () => {
+    return axios.get(urlAll);
+  },
+  getSingledata: sym => {
+    const url = urlsingle + sym;
     return axios.get(url);
   },
 };
