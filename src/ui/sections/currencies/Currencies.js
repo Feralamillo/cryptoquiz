@@ -7,7 +7,18 @@ class Currencies extends Component {
     api
       .getAlldata()
       .then(res => {
-        console.log(res.data.Data);
+        const allData = Object.values(res.data.Data);
+        console.log(allData);
+        const randomIndex = Math.floor(Math.random() * allData.length);
+        console.log(randomIndex);
+        console.log(allData[randomIndex]);
+        const crypto = allData[randomIndex];
+        console.log(`The name of the Coin is ${crypto.CoinName}`);
+        console.log(`The Symbol of the Coin is ${crypto.Name}`);
+        console.log(
+          `The Image of the Coin is http://cryptocompare.com${crypto.ImageUrl}`,
+        );
+        console.log(`The Prooftype of the Coin is ${crypto.ProofType}`);
       })
       .catch(console.eror);
   }
@@ -25,7 +36,7 @@ class Currencies extends Component {
             />
             <div className="container">
               <h4>
-                <b>Coin Name: Ethereum</b>
+                <b>Coin Name: {crypto.CoinName}</b>
               </h4>
               <p> Symbol: ETH</p>
               <p>ProofType: PoW</p>

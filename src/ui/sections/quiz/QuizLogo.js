@@ -1,51 +1,42 @@
 import React, { Component } from 'react';
-import swal from 'sweetalert2';
 import './Quiz.css';
+import QuizShowLogo from '../../components/QuizShowLogo';
+import QuizFormLogo from '../../components/QuizFormLogo';
 
+/**
+ * Parent component that manages the info between the components
+ */
 class QuizLogo extends Component {
-  state = {};
+  static defaultProps = {
+    logo: 'https://www.cryptocompare.com/media/19633/btc.png',
+    cryptoRealName: 'Bitcoin',
+  };
 
-  OnFormSubmit = e => {
-    e.preventDefault();
-    const cryptoName = this.refs.cryptoName.value;
-    const cryptoRealName = 'Bitcoin';
+  state = {
+    logo: this.props.logo,
+    cryptoRealName: this.props.cryptoRealName,
+  };
 
-    if (cryptoName.length > 0) {
-      this.refs.cryptoName.value = '';
-      if (cryptoName === cryptoRealName) {
-        swal({
-          title: 'Congratulations!!',
-          text: 'Your answer is correct',
-          type: 'success',
-        });
-      } else {
-        swal({
-          title: 'Wrong :(',
-          text: `The answer is ${cryptoRealName}`,
-          type: 'error',
-        });
-      }
-    }
+  handleNewData = function(updates) {
+    this.setState(updates);
   };
 
   render() {
-    const logo = 'https://www.cryptocompare.com/media/19633/btc.png';
+    // const logo = 'https://www.cryptocompare.com/media/19633/btc.png';
+    // const logo2 = 'https://www.cryptocompare.com/media/20646/eth_logo.png';
+
+    const logo = this.state.logo;
+    const cryptoRealName = this.state.cryptoRealName;
 
     return (
       <div className="mainQuiz">
         <div className="container">
-          <img className="imgquiz" src={logo} alt="Misterious logo" />
+          <QuizShowLogo logo={logo} />
           <h3>What's the name of this crypto?</h3>
-          <form className="quizform" onSubmit={this.OnFormSubmit}>
-            <div>
-              <input
-                type="text"
-                ref="cryptoName"
-                placeholder="Enter name of Cryptocurrency"
-              />
-              <button>Send</button>
-            </div>
-          </form>
+          <QuizFormLogo
+            cryptoRealName={cryptoRealName}
+            onNewData={this.handleNewData.bind(this)}
+          />
         </div>
       </div>
     );

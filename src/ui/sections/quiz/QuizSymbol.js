@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Quiz.css';
 import swal from 'sweetalert2';
+import QuizShowSymbol from '../../components/QuizShowSymbol';
 
 class QuizSymbol extends Component {
   OnFormSubmit = e => {
@@ -32,9 +33,8 @@ class QuizSymbol extends Component {
     return (
       <div className="mainQuiz">
         <div className="container">
-          <h2>{cryptoSymbol}</h2>
+          <QuizShowSymbol symbol={cryptoSymbol} />
           <h3>What's the name of this crypto?</h3>
-
           <form className="quizform" onSubmit={this.OnFormSubmit}>
             <div>
               <input
